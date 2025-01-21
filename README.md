@@ -63,9 +63,8 @@ Lorsqu'on envoie le fichier, le programme demande à l'utilisateur de faire le c
 ### Mode Console
 ----------
 -  Le programme reçoit le fichier contenant la matrice et les dimensions.
--  L'utilisateur initialise les paramètres.
--  Le programme Demande à l'utilisateur de donner un nom de dossier afin d'enregistrer à chaque itération la nouvelle matrice.
--  Le dossier est ensuite stocké avec les "logs" de la simulation en fonction du nombre d'itérations qui a été demandé.
+-  L'utilisateur initialise le nombre d'itérations.
+-  Le programme crée un dossier avec le nom qui sera fourni par l'utilisateur dans le chemin fourni.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/4bbc5515-5c11-48ca-8ba9-2b40fa3003cc" alt="Mode Console">
@@ -105,19 +104,23 @@ Enfin, le tour est joué ! la simulation démarre.
 
 ## **🚧 VI/ Présentation des fonctions dans la structure de notre programme**
 
-Notre programme contient quatre classes, quatre fichiers c++ ainsi que le main.cpp :
+Le modèle MVC est appliqué dans ce cadre :
 
-- ```main.cpp``` : Gère l'interface utilisateur et les itérations de la grille (console | graphique)    
+- ```main.cpp``` : Contrôle les paramètres d'entrée puis éxécute notre programme. (console | graphique)
 
-- ```AliveCell.cpp | AliveCell.h``` : Représente une cellule vivante, elle vérifie ses voisins à chaque itération
+- ```GameofLife.cpp | GameofLife.h ``` : Éxécute la globalité du programme.
 
-- ```DeadCell.cpp | DeadCell.h``` : Représente une cellule morte, elle vérifie ses voisins à chaque itération
-
-- ```cell.cpp | cell.h``` : Représente une cellule avec les méthodes de base
+- ```cell.cpp | cell.h``` : Représente une cellule, elle vérifie ses voisins à chaque itération.
 
 - ```grid.cpp | grid.h``` : Représente la grille de cellules et s'occupe des itérations
+  
+- ```gestion_creation_fichier.cpp | gestion_creation_fichier.h``` : S'occupe de la sauvegarde des différents états de la grille.
 
-- ```Matrice.txt``` : Un fichier texte qui sert d'exemple, elle décrit notamment les dimensions de la grille ainsi que les différentes cellules présentes + obstacles
+- ```affichage.cpp | affichage.h``` : S'occupe de la représentation graphique de la grille.
+
+- ```30x30.txt``` : Un fichier texte qui sert d'exemple, elle décrit notamment les dimensions de la grille ainsi que les différentes cellules présentes + obstacles
+
+- ```test_unitaire_cellule.cpp``` : Test unitaire qui pose des conditions pour voir si elles sont bien respectées, permet de s'assurer du bon fonctionnement d'un bout de code, en l'occurence, le test unitaire se base sur la classe "Cellule" 
 
 ## **🧭 VII/ Légende**
 
@@ -142,12 +145,18 @@ Notre programme contient quatre classes, quatre fichiers c++ ainsi que le main.c
 3 **Compiler le jeu**
 - Lorsque vous serez dans le dossier contenant le programme, compilez le script grace à cette commande dans le terminal :
 ```bash
-g++ -o main main.cpp AliveCell.cpp DeadCell.cpp cell.cpp grid.cpp -lsfml-graphics -lsfml-window -lsfml-system
+g++ -o main main.cpp cell.cpp grid.cpp GameofLife.cpp gestion_creation_fichier.cpp affichage.cpp -lsfml-graphics -lsfml-window -lsfml-system
 ```
--Puis, une fois le code compilé, utilisez cette commande dans le même dossier :
+- Puis, une fois le code compilé, utilisez cette commande dans le même dossier :
 ```bash
 ./main
 ```
-(Note, vous pouvez remplacer le main dans ```-o main``` et ```./main``` par le nom que vous voulez si vous voulez avoir un nom de fichier différent, mais cela n'est pas nécessaire. 😉)
-
-4. **Enjoy!**
+- Pour essayer le test unitaire :
+```bash
+g++ -o test test_unitaire.cpp cell.cpp
+```
+- Puis :
+```bash
+./test  
+```
+(Note, vous pouvez remplacer le main dans ```-o main``` et ```./main``` par le nom que vous voulez (idem pour le test) si vous voulez avoir un nom de fichier différent, mais cela n'est pas nécessaire.)
