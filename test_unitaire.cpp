@@ -44,7 +44,7 @@ int main()
         cout << "[FAIL] Changement d'état non préparé." << endl;
     }
     cell2.ChangeStatement();
-    if (cell2.getAlive() == false)
+    if (cell2.getAlive() == false && cell2.getChange() == false)
     {
         cout << "[OK] Changement d'état effectué." << endl;
     }
