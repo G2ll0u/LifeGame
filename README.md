@@ -106,7 +106,7 @@ Enfin, le tour est joué ! la simulation démarre.
 
 Le modèle MVC est appliqué dans ce cadre :
 
-- ```main.cpp``` : Contrôle les paramètres d'entrée puis éxécute notre programme. (console | graphique)
+- ```main.cpp``` : Demande les paramètres d'entrée puis éxécute notre programme. (console | graphique)
 
 - ```GameofLife.cpp | GameofLife.h ``` : Éxécute la globalité du programme.
 
