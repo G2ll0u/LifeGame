@@ -1,8 +1,5 @@
 # ❗"Lifegame" - Projet POO en C++ ❗
 
-## 🧑🏻‍🦰👨🏻 **Binôme**
-Ce projet a été réalisé en binôme ( Yanis B. | Virgil G.) dans un cadre scolaire (CESI - Ecole d'Ingenieurs | Bloc Conception & Programmation Objet)
-
 ## 📜 **Sommaire**
 
 - I/ Introduction du jeu de la vie
@@ -55,7 +52,7 @@ A chaque itération, on définit l'état d'une cellule en fonction de l'état de
 
 ### **A/ Lecture du fichier (création de la grille)**
 
-Avant le démarrage de la simulation, le programme demande à l'utilisateur un fichier qui comprend les dimensions de la grille, ainsi que la matrice (0 ou 1) afin de définir les cellules vivantes dans celle-ci.
+Avant le démarrage de la simulation, le programme demande à l'utilisateur un fichier (dans un chemin local ou global) qui comprend les dimensions de la grille, ainsi que la matrice (0 ou 1) afin de définir les cellules vivantes dans celle-ci.
 
 Note : Le fichier doit être un .txt
 
