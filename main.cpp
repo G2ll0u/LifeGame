@@ -61,7 +61,7 @@ int main() {
         string nom_dossier, lien_dossier;
         cout << "Entrez le nom du dossier que vous voulez créer" << endl;
         cin >> nom_dossier;
-        cout << "Voulez-vous créer un dossier dans le dossier courant (0) ou un autre (1) ?" << endl;
+        cout << "Voulez-vous créer un dossier dans le dossier courant (0) ou un autre ?" << endl;
         cin >> choix;
         if (choix == 0) {
             lien_dossier = "";
