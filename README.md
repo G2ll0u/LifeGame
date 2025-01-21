@@ -1,4 +1,4 @@
-# ❗"Lifegame" - Projet POO en C++ ❗
+# ❗"Lifegame" - Projet POO en C++ (Rattrapage) ❗
 
 ## 📜 **Sommaire**
 
