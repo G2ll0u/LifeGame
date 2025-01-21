@@ -52,5 +52,4 @@ int main()
     {
         cout << "[FAIL] Changement d'état non effectué." << endl;
     }
-    /*Test de vérification de la prochaine itération*/
 }
