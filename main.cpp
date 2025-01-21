@@ -61,8 +61,14 @@ int main() {
         string nom_dossier, lien_dossier;
         cout << "Entrez le nom du dossier que vous voulez créer" << endl;
         cin >> nom_dossier;
-        cout << "Entrez le lien du dossier que vous voulez créer" << endl;
-        cin >> lien_dossier;
+        cout << "Voulez-vous créer un dossier dans le dossier courant (0) ou un autre (1) ?" << endl;
+        cin >> choix;
+        if (choix == 0) {
+            lien_dossier = "";
+        } else {
+            cout << "Entrez le lien du dossier que vous voulez créer" << endl;
+            cin >> lien_dossier;
+        }
         GameofLife game(NbIterations, false, nom_fichier, lien_dossier, nom_dossier);
         game.runGame();
         }
